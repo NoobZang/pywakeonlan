@@ -5,7 +5,7 @@ on:
     types: [poweron]
 
 jobs:
-  Upload:
+  poweron:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
