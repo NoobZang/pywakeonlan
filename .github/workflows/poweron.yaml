@@ -1,0 +1,20 @@
+name: Power On
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [poweron]
+
+jobs:
+  Upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          
+      - name: execute py script
+        run: python wakeonlan/__init__.py ${{ secrets.MAC_ADDRESS }} -i ${{ secrets.IP_ADDRESS }}
