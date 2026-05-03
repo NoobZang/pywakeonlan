@@ -17,4 +17,4 @@ jobs:
           python-version: '3.12'
           
       - name: execute py script
-        run: python wakeonlan/__init__.py ${{ secrets.MAC_ADDRESS }} -i ${{ secrets.IP_ADDRESS }}
+        run: python wakeonlan/__init__.py ${{ secrets.MAC_ADDRESS }} -i ${{ secrets.IP_ADDRESS }} -6
